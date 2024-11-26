@@ -83,6 +83,9 @@ return {
         },
       }
     end,
+    config = function()
+      require("kanagawa").setup({})
+    end,
   },
   {
     "xiantang/darcula-dark.nvim",

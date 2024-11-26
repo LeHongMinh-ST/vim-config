@@ -5,17 +5,7 @@ return {
     servers = {
       intelephense = {
         enabled = true,
-        -- settings = {
-        --   intelephense = {
-        --     format = {
-        --       braces = "k&r",
-        --     },
-        --   },
-        -- },
       },
-      -- ruff_lsp = {
-      --   autostart = false,
-      -- },
 
       volar = {
         init_options = {

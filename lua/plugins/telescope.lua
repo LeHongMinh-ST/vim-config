@@ -9,6 +9,8 @@ local grep_picker = {
 return {
   {
     "nvim-telescope/telescope.nvim",
+    version = "0.1.4",
+    dependencies = "nvim-lua/plenary.nvim",
     lazy = true,
     opts = {
       -- theme = "vscode", -- custom field
@@ -89,8 +91,8 @@ return {
         local theme = require("telescope.themes")["get_dropdown"]
         if theme then
           opts.defaults = theme(opts.defaults)
-          opts.defaults.preview = false
         end
+        opts.defaults.preview = false
       end
 
       if vim.fn.executable("rg") then
@@ -119,6 +121,10 @@ return {
           require("telescope").load_extension("fzf")
         end,
       },
+    },
+
+    lsp_handlers = {
+      definition = require("telescope.builtin").lsp_definitions,
     },
   },
 }

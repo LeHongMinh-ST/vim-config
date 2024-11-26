@@ -9,7 +9,7 @@ return {
       phpcs = {
         cmd = "phpcs",
         args = { "--ignore=CommentingRules" },
-        stdin = true,
+        stdin = false,
       },
     },
   },

@@ -3,8 +3,14 @@ return {
   optional = true,
   opts = {
     linters_by_ft = {
-      -- php = { "pint" },
       php = { "phpcs" },
+    },
+    linters = {
+      phpcs = {
+        cmd = "phpcs",
+        args = { "--ignore=CommentingRules" },
+        stdin = true,
+      },
     },
   },
 }

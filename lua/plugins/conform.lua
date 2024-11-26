@@ -16,6 +16,7 @@ return {
         fish = { "fish_indent" },
         sh = { "shfmt" },
         php = { "pint" },
+        -- php = { "php" },
         -- php = { "php-cs-fixer" },
         blade = { "blade-formatter", "rustywind" },
         vue = { "prettier" },
@@ -38,6 +39,15 @@ return {
       ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
       formatters = {
         injected = { options = { ignore_errors = true } },
+        ["php-cs-fixer"] = {
+          command = "php-cs-fixer",
+          args = {
+            "fix",
+            "--rules=@PSR12", -- Formatting preset. Other presets are available, see the php-cs-fixer docs.
+            "$FILENAME",
+          },
+          stdin = false,
+        },
         ["blade-formatter"] = {
           command = "blade-formatter",
           args = {

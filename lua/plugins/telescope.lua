@@ -10,7 +10,7 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     version = "0.1.4",
-    dependencies = "nvim-lua/plenary.nvim",
+    -- dependencies = "nvim-lua/plenary.nvim",
     lazy = true,
     opts = {
       -- theme = "vscode", -- custom field
@@ -112,16 +112,16 @@ return {
 
       require("telescope").setup(opts)
     end,
-    dependencies = {
-      {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        enabled = vim.fn.executable("fzf"),
-        build = "make",
-        config = function()
-          require("telescope").load_extension("fzf")
-        end,
-      },
-    },
+    -- dependencies = {
+    --   {
+    --     "nvim-telescope/telescope-fzf-native.nvim",
+    --     enabled = vim.fn.executable("fzf"),
+    --     build = "make",
+    --     config = function()
+    --       require("telescope").load_extension("fzf")
+    --     end,
+    --   },
+    -- },
 
     lsp_handlers = {
       definition = require("telescope.builtin").lsp_definitions,

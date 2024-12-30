@@ -7,14 +7,6 @@ return {
     end,
   },
 
-  -- auto import js
-  -- {
-  --   "ludovicchabant/vim-gutentags",
-  -- },
-  -- {
-  --   "kristijanhusak/vim-js-file-import",
-  -- },
-
   -- auto import php
   -- {
   --   "arnaud-lb/vim-php-namespace",

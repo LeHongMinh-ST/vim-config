@@ -18,7 +18,7 @@ return {
           },
         },
       },
-
+      -- jdtls = {},
       volar = {
         init_options = {
           vue = {
@@ -196,6 +196,9 @@ return {
         -- copy typescript settings to javascript
         opts.settings.javascript =
           vim.tbl_deep_extend("force", {}, opts.settings.typescript, opts.settings.javascript or {})
+      end,
+      jdtls = function()
+        return true -- avoid duplicate servers
       end,
     },
   },

@@ -3,7 +3,7 @@ return {
     "Mofiqul/vscode.nvim",
     config = function()
       -- Set the background theme (dark or light)
-
+      -- vim.o.background = "light"
       -- vim.o.background = "dark" -- Change to "light" if you prefer
       -- local c = require("vscode.colors").get_colors()
 

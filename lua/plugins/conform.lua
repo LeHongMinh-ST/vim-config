@@ -15,9 +15,9 @@ return {
         lua = { "stylua" },
         fish = { "fish_indent" },
         sh = { "shfmt" },
-        php = { "pint" },
+        -- php = { "pint" },
         -- php = { "php" },
-        -- php = { "php-cs-fixer" },
+        php = { "php-cs-fixer" },
         blade = { "blade-formatter", "rustywind" },
         vue = { "prettier" },
         typescript = { "prettier" },
@@ -29,11 +29,6 @@ return {
         python = { "black" },
         javascript = { "prettierd" },
       },
-      -- format_on_save = {
-      --   lsp_fallback = true,
-      --   async = false,
-      --   timeout_ms = 1000,
-      -- },
       -- LazyVim will merge the options you set here with builtin formatters.
       -- You can also define any custom formatters here.
       ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>

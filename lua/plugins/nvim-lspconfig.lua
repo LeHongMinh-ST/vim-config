@@ -18,7 +18,100 @@ return {
           },
         },
       },
-      -- jdtls = {},
+      jdtls = {
+        enabled = true,
+        settings = {
+          java = {
+            configuration = {
+              runtimes = {
+                { name = "JavaSE-17", path = "/path/to/java17", default = true },
+                { name = "JavaSE-11", path = "/path/to/java11" },
+              },
+            },
+            codeGeneration = {
+              toString = {
+                template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
+              },
+              hashCodeEquals = {
+                useInstanceof = true,
+              },
+              useBlocks = true,
+            },
+          },
+        },
+        -- keys = {
+        --   {
+        --     "<leader>cj",
+        --     function()
+        --       vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } } })
+        --     end,
+        --     desc = "Organize Imports (Java)",
+        --   },
+        --   {
+        --     "<leader>cg",
+        --     function()
+        --       vim.lsp.buf.code_action({ context = { only = { "source.generate" } } })
+        --     end,
+        --     desc = "Generate Code (Java)",
+        --   },
+        --   {
+        --     "<leader>cc",
+        --     function()
+        --       vim.lsp.buf.code_action({ context = { only = { "refactor.extract.function" } } })
+        --     end,
+        --     desc = "Extract Function (Java)",
+        --   },
+        --   {
+        --     "<leader>cv",
+        --     function()
+        --       vim.lsp.buf.code_action({ context = { only = { "refactor.extract.variable" } } })
+        --     end,
+        --     desc = "Extract Variable (Java)",
+        --   },
+        --   {
+        --     "<leader>cr",
+        --     function()
+        --       vim.lsp.buf.code_action({ context = { only = { "refactor.rename" } } })
+        --     end,
+        --     desc = "Rename (Java)",
+        --   },
+        --   {
+        --     "<leader>ci",
+        --     function()
+        --       vim.lsp.buf.code_action({ context = { only = { "source.generate.accessors" } } })
+        --     end,
+        --     desc = "Generate Accessors",
+        --   },
+        --   {
+        --     "<leader>cC",
+        --     function()
+        --       vim.lsp.buf.code_action({ context = { only = { "source.generate.constructors" } } })
+        --     end,
+        --     desc = "Generate Constructors",
+        --   },
+        --   {
+        --     "<leader>cH",
+        --     function()
+        --       vim.lsp.buf.code_action({ context = { only = { "source.generate.hashCodeEquals" } } })
+        --     end,
+        --     desc = "Generate hashCode & equals",
+        --   },
+        --   {
+        --     "<leader>cT",
+        --     function()
+        --       vim.lsp.buf.code_action({ context = { only = { "source.generate.toString" } } })
+        --     end,
+        --     desc = "Generate toString",
+        --   },
+        --   {
+        --     "<leader>cm",
+        --     function()
+        --       vim.lsp.buf.code_action({ context = { only = { "refactor.move" } } })
+        --     end,
+        --     desc = "Move (Java)",
+        --   },
+        -- },
+      },
       volar = {
         init_options = {
           vue = {
@@ -197,8 +290,8 @@ return {
         opts.settings.javascript =
           vim.tbl_deep_extend("force", {}, opts.settings.typescript, opts.settings.javascript or {})
       end,
-      jdtls = function()
-        return true -- avoid duplicate servers
+      jdtls = function(_, opts)
+        return true
       end,
     },
   },

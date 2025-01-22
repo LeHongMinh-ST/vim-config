@@ -28,6 +28,7 @@ return {
         json = { "prettier" },
         python = { "black" },
         javascript = { "prettierd" },
+        java = { "google-java-format" },
       },
       -- LazyVim will merge the options you set here with builtin formatters.
       -- You can also define any custom formatters here.

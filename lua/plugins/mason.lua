@@ -35,7 +35,9 @@ return {
       "shellcheck",
       "shfmt",
       "intelephense",
-      -- "java-debug-adapter", "java-test",
+      "google-java-format",
+      "java-debug-adapter",
+      "java-test",
     },
   },
 }
